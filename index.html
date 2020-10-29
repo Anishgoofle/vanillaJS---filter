@@ -1,11 +1,69 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <script src="script.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-  </head>
-  <body>
-    <h1>Hello there!</h1>
-    <a href="/me.html">My other page</a>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>My Contacts</h1>
+		<input type="text" placeholder="search" id="filterInput" />
+		<div class="sub-container">
+
+			<!-- A -->
+			<div>
+				<h2 class="flex">A</h2>
+				<hr />
+				<span class="flex">Anish</span>
+				<hr />
+				<span class="flex">Aditya</span>
+				<hr />
+			</div>
+
+			<!-- B -->
+			<div>
+				<h2 class="flex">B</h2>
+				<hr />
+				<span class="flex">Baroda</span>
+				<hr />
+				<span class="flex">Bag</span>
+				<hr />
+			</div>
+
+			<!-- C -->
+			<div>
+				<h2 class="flex">C</h2>
+				<hr />
+				<span class="flex">Const</span>
+				<hr />
+				<span class="flex">Chloe</span>
+				<hr />
+				<span class="flex">Cat</span>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script>
+	//Get input value
+    const filterInput = document.getElementById('filterInput');
+    //Add event listener
+    filterInput.addEventListener('keyup', filterNames);
+
+    function filterNames(){
+      //Get value of filterInput
+      let value = filterInput.value.toUpperCase();
+      const valueArray = document.querySelectorAll('span.flex');
+      
+      for(let i=0;i<valueArray.length; i++){
+          if(valueArray[i].innerHTML.toUpperCase().indexOf(value) > -1){
+            valueArray[i].style.display = '';
+          }else{
+            valueArray[i].style.display = 'none';
+          }
+      }
+    }
+</script>
+
 </html>
