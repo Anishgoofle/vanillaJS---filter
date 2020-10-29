@@ -22,7 +22,7 @@ input {
 }
 
 .sub-container {
-  height: 600px;
+  height: 60%;
   width: 90%;
   border: 1px solid black;
 }
